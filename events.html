@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="bg">
+<head>
+  <meta charset="UTF-8">
+  <title>Произшествия</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css"/>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+  <script defer src="script.js"></script>
+</head>
+<body>
+  <header>
+    <h1>Събития и карта</h1>
+    <nav>
+      <a href="index.html">Начало</a>
+      <a href="employees.html">Служители</a>
+      <a href="vehicles.html">Автомобили</a>
+      <a href="events.html">Събития</a>
+      <button id="themeToggle">Смени тема</button>
+    </nav>
+  </header>
+
+  <main>
+    <section>
+      <h2>Докладвай събитие</h2>
+      <form id="eventForm">
+        <input type="text" placeholder="Адрес" required>
+        <input type="text" placeholder="GPS координати" required>
+        <select>
+          <option>Пожар</option>
+          <option>Катастрофа</option>
+        </select>
+        <button type="submit">Изпрати</button>
+      </form>
+    </section>
+
+    <section>
+      <h2>Карта</h2>
+      <div id="map" style="height: 300px;"></div>
+    </section>
+
+    <section>
+      <h2>Статистика</h2>
+      <canvas id="chart" width="400" height="200"></canvas>
+    </section>
+  </main>
+
+  <footer>
+    <p>© 2025 ГДПБЗН</p>
+  </footer>
+</body>
+</html>
