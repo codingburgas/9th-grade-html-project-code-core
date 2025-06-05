@@ -1,0 +1,99 @@
+body {
+  font-family: sans-serif;
+  margin: 0;
+  padding: 0;
+  background: white;
+  color: black;
+  transition: all 0.3s;
+}
+
+header, footer {
+  background: #c62828;
+  color: white;
+  padding: 1em;
+  text-align: center;
+}
+
+nav a {
+  margin: 0 10px;
+  color: white;
+  text-decoration: none;
+}
+
+button {
+  margin-left: 10px;
+}
+
+table, th, td {
+  border: 1px solid #ccc;
+  border-collapse: collapse;
+  padding: 8px;
+}
+
+.dark {
+  background: #121212;
+  color: white;
+}
+
+.dark header, .dark footer {
+  background: #880000;
+}
+
+
+
+
+
+#eventForm{
+
+ outline-width: 2px;
+  outline-style: solid;
+  outline-color: rgb(216, 216, 216);
+
+  width: 400px;
+  margin: 40px auto; 
+  outline: 5px solid rgb(216, 216, 216);
+  padding: 20px;
+  box-sizing: border-box;
+
+  
+  box-shadow: 0 20px 30px rgba(0, 0, 0, 0.1); 
+  border-radius: 10px; 
+  background: white;   
+ 
+
+}
+
+#eventForm input,
+#eventForm select{
+
+    border: 2px solid #aaa; 
+    border-radius: 6px;     
+    padding: 8px;           
+         
+    outline: none;  
+
+    font-size: 16px;  
+
+}
+
+#eventForm input,
+#eventForm select,
+#eventForm textarea {
+
+  display: block;
+  width: 100%;      
+
+  margin-bottom: 15px; 
+  box-sizing: border-box; 
+
+}
+
+
+#Map_text,
+#Stats_text,
+#Report_text {
+
+  text-align: center;
+
+}
+

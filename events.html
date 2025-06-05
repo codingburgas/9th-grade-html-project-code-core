@@ -3,11 +3,12 @@
 <head>
   <meta charset="UTF-8">
   <title>Произшествия</title>
-  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="events_styles.css">
   <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css"/>
   <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
   <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
   <script defer src="script.js"></script>
+  <script src="events_script.js"></script>
 </head>
 <body>
   <header>
@@ -23,25 +24,38 @@
 
   <main>
     <section>
-      <h2>Докладвай събитие</h2>
+      <h2 id="Report_text">Докладвай събитие</h2>
       <form id="eventForm">
+
+        <select id="IncidentOption">
+          <option id="fire" value="fire">Пожар</option>
+          <option id="CarCrash" value="crash">Катастрофа</option>
+          <option id="gas" value="gas">Изтичане не газ</option>
+          <option id="others" value="others">Други</option>
+        </select>
+
+
+        <input id="Description" type="text" placeholder="Опишете събитието" style="display: none" maxlength="150">
+        <div id="CharacterCount" style="display: none">0/200</div>
+
+
         <input type="text" placeholder="Адрес" required>
         <input type="text" placeholder="GPS координати" required>
-        <select>
-          <option>Пожар</option>
-          <option>Катастрофа</option>
-        </select>
+        <input type="text" placeholder="Мобилен телефон" required>
+
+
+        
         <button type="submit">Изпрати</button>
       </form>
     </section>
 
     <section>
-      <h2>Карта</h2>
+      <h2 id="Map_text">Карта</h2>
       <div id="map" style="height: 300px;"></div>
     </section>
 
     <section>
-      <h2>Статистика</h2>
+      <h2 id="Stats_text">Статистика</h2>
       <canvas id="chart" width="400" height="200"></canvas>
     </section>
   </main>
