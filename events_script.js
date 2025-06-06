@@ -29,4 +29,3 @@ var CharCount = document.getElementById("CharacterCount");
 
   });
 });
-
