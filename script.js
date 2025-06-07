@@ -9,22 +9,68 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
   const employees = [
-    { name: "Иван", surname: "Петров", id: 1, team: "А", status: "Свободен", phone: "0888123456" },
-    { name: "Мария", surname: "Иванова", id: 2, team: "Б", status: "В произшествие", phone: "0899123456" },
-    { name: "Георги", surname: "Димитров", id: 3, team: "А", status: "Свободен", phone: "0877123456" },
-    { name: "Елена", surname: "Стоянова", id: 4, team: "В", status: "В почивка", phone: "0889123457" },
-    { name: "Николай", surname: "Колев", id: 5, team: "Б", status: "Свободен", phone: "0898123457" },
-    { name: "Десислава", surname: "Тодорова", id: 6, team: "А", status: "Свободен", phone: "0878123457" },
-    { name: "Петър", surname: "Михайлов", id: 7, team: "В", status: "В произшествие", phone: "0887123458" },
-    { name: "Йорданка", surname: "Николова", id: 8, team: "А", status: "Свободен", phone: "0897123458" },
-    { name: "Красимир", surname: "Маринов", id: 9, team: "Б", status: "В почивка", phone: "0876123458" },
-    { name: "Валентина", surname: "Алексиева", id: 10, team: "А", status: "Свободен", phone: "0886123459" },
-    { name: "Александър", surname: "Георгиев", id: 11, team: "В", status: "В произшествие", phone: "0895123459" },
-    { name: "Светлана", surname: "Петрова", id: 12, team: "Б", status: "Свободен", phone: "0875123459" },
-    { name: "Тодор", surname: "Иванов", id: 13, team: "А", status: "Свободен", phone: "0884123460" },
-    { name: "Росица", surname: "Димитрова", id: 14, team: "В", status: "В почивка", phone: "0894123460" },
-    { name: "Илия", surname: "Костов", id: 15, team: "Б", status: "Свободен", phone: "0874123460" }
-  ];
+  { name: "Ivan", surname: "Petrov", id: 1, team: "A", status: "В проишествие", phone: "0888123456" },
+  { name: "Maria", surname: "Ivanova", id: 2, team: "B", status: "В проишествие", phone: "0899123456" },
+  { name: "Georgi", surname: "Dimitrov", id: 3, team: "A", status: "В почивка", phone: "0877123456" },
+  { name: "Elena", surname: "Stoyanova", id: 4, team: "C", status: "В проишествие", phone: "0889123457" },
+  { name: "Nikolay", surname: "Kolev", id: 5, team: "B", status: "Свободен", phone: "0898123457" },
+  { name: "Desislava", surname: "Todorova", id: 6, team: "A", status: "В почивка", phone: "0878123457" },
+  { name: "Petar", surname: "Mihaylov", id: 7, team: "C", status: "В проишествие", phone: "0887123458" },
+  { name: "Yordanka", surname: "Nikolova", id: 8, team: "A", status: "В проишествие", phone: "0897123458" },
+  { name: "Krasimir", surname: "Marinov", id: 9, team: "B", status: "В проишествие", phone: "0876123458" },
+  { name: "Valentina", surname: "Alekseeva", id: 10, team: "A", status: "На смяна", phone: "0886123459" },
+  { name: "Aleksandar", surname: "Georgiev", id: 11, team: "C", status: "На смяна", phone: "0895123459" },
+  { name: "Svetlana", surname: "Petrova", id: 12, team: "B", status: "Свободен", phone: "0875123459" },
+  { name: "Todor", surname: "Ivanov", id: 13, team: "A", status: "Свободен", phone: "0884123460" },
+  { name: "Rositsa", surname: "Dimitrova", id: 14, team: "C", status: "Свободен", phone: "0894123460" },
+  { name: "Iliya", surname: "Kostov", id: 15, team: "B", status: "В почивка", phone: "0874123460" }
+];
+
+
+const table = document.getElementById("employeeTable");
+
+for (let i = 0; i < employees.length; i++) {
+  const e = employees[i];
+
+  const row = document.createElement("tr");
+
+
+  const nameTd = document.createElement("td");
+  nameTd.textContent = e.name;
+
+  const surnameTd = document.createElement("td");
+  surnameTd.textContent = e.surname;
+
+  const idTd = document.createElement("td");
+  idTd.textContent = e.id;
+
+  const teamTd = document.createElement("td");
+  teamTd.textContent = e.team;
+
+  const statusTd = document.createElement("td");
+  statusTd.textContent = e.status;
+
+
+  if (e.status === "Свободен") {
+    statusTd.classList.add("status-free");
+  } else if (e.status === "На смяна") {
+    statusTd.classList.add("status-duty");
+  } else if (e.status === "В почивка") {
+    statusTd.classList.add("status-break");
+  } else if (e.status === "В проишествие") {
+    statusTd.classList.add("status-incident");
+  }
+
+ 
+  row.appendChild(nameTd);
+  row.appendChild(surnameTd);
+  row.appendChild(idTd);
+  row.appendChild(teamTd);
+  row.appendChild(statusTd);
+
+  
+  table.appendChild(row);
+}
 
 
  
@@ -52,10 +98,9 @@ function getRandomItem(arr) {
 
 function generateRandomBGPlate() {
   const prefixes = ['CB', 'PB', 'B', 'E', 'TX', 'KH', 'PP', 'M', 'Y', 'CH', 'PK', 'T', 'CC', 'BH', 'CM'];
-  const letters = 'ABCEHKMOPTXY'; // Латински букви, визуално отговарящи на кирилица
-
+  const letters = 'ABCEHKMOPTXY'; 
   const prefix = prefixes[Math.floor(Math.random() * prefixes.length)];
-  const numbers = Math.floor(1000 + Math.random() * 9000); // четирицифрен номер
+  const numbers = Math.floor(1000 + Math.random() * 9000); 
   const suffix =
     letters.charAt(Math.floor(Math.random() * letters.length)) +
     letters.charAt(Math.floor(Math.random() * letters.length));

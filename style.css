@@ -132,3 +132,22 @@ th {
 tr:nth-child(even) {
   background-color: #f9f9f9;
 }
+.status-free {
+  color: green;
+  font-weight: bold;
+}
+
+.status-duty {
+  color: orange;
+  font-weight: bold;
+}
+
+.status-break {
+  color: goldenrod;
+  font-weight: bold;
+}
+
+.status-incident {
+  color: red;
+  font-weight: bold;
+}
