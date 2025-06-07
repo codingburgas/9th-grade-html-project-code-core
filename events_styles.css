@@ -1,98 +1,120 @@
+
 body {
-  font-family: sans-serif;
+  font-family: 'Roboto', sans-serif;
+  background-color: #F5F5F5;
+  color: #212121;
   margin: 0;
-  padding: 0;
-  background: white;
-  color: black;
-  transition: all 0.3s;
+  padding: 0 1rem;
+  line-height: 1.6;
+  transition: all 0.3s ease;
 }
 
+
 header, footer {
-  background: #c62828;
+  background-color: #212121;
   color: white;
-  padding: 1em;
+  padding: 1rem;
   text-align: center;
+  border-top: 4px solid #C62828;
 }
 
 nav a {
-  margin: 0 10px;
   color: white;
   text-decoration: none;
+  margin: 0 10px;
+  background-color: #C62828;
+  padding: 0.5rem 1rem;
+  border-radius: 4px;
+  transition: background-color 0.3s ease;
 }
 
-button {
-  margin-left: 10px;
-}
-
-table, th, td {
-  border: 1px solid #ccc;
-  border-collapse: collapse;
-  padding: 8px;
-}
-
-.dark {
-  background: #121212;
-  color: white;
-}
-
-.dark header, .dark footer {
-  background: #880000;
+nav a:hover {
+  background-color: #B71C1C;
 }
 
 
-
-
-
-#eventForm{
-
- outline-width: 2px;
-  outline-style: solid;
-  outline-color: rgb(216, 216, 216);
-
+#eventForm {
   width: 400px;
-  margin: 40px auto; 
-  outline: 5px solid rgb(216, 216, 216);
+  margin: 40px auto;
   padding: 20px;
+  background: white;
+  border-radius: 10px;
+  box-shadow: 0 20px 30px rgba(0, 0, 0, 0.1);
+  outline: 5px solid rgb(216, 216, 216);
   box-sizing: border-box;
-
-  
-  box-shadow: 0 20px 30px rgba(0, 0, 0, 0.1); 
-  border-radius: 10px; 
-  background: white;   
- 
-
-}
-
-#eventForm input,
-#eventForm select{
-
-    border: 2px solid #aaa; 
-    border-radius: 6px;     
-    padding: 8px;           
-         
-    outline: none;  
-
-    font-size: 16px;  
-
 }
 
 #eventForm input,
 #eventForm select,
 #eventForm textarea {
-
   display: block;
-  width: 100%;      
+  width: 100%;
+  margin-bottom: 15px;
+  padding: 8px;
+  font-size: 16px;
+  border: 2px solid #aaa;
+  border-radius: 6px;
+  outline: none;
+  box-sizing: border-box;
+  transition: border-color 0.3s ease;
+}
 
-  margin-bottom: 15px; 
-  box-sizing: border-box; 
+#eventForm input:focus,
+#eventForm select:focus,
+#eventForm textarea:focus {
+  border-color: #C62828;
+}
 
+table, th, td {
+  width: 100%;
+  border-collapse: collapse;
+  border: 1px solid #CFD8DC;
+  padding: 0.75rem;
+  text-align: left;
+}
+
+th {
+  background-color: #C62828;
+  color: white;
+}
+
+tr:nth-child(even) {
+  background-color: #F5F5F5;
 }
 
 
 #Map_text,
 #Stats_text,
 #Report_text {
-
   text-align: center;
-
+  margin-top: 2rem;
 }
+
+.status-free {
+  color: green;
+  font-weight: bold;
+}
+
+.status-duty {
+  color: orange;
+  font-weight: bold;
+}
+
+.status-incident {
+  color: red;
+  font-weight: bold;
+}
+
+.status-free::before,
+.status-duty::before,
+.status-incident::before {
+  content: '● ';
+}
+
+
+
+
+.dark header, .dark footer {
+  background-color: #880000;
+}
+
