@@ -29,51 +29,47 @@ document.addEventListener("DOMContentLoaded", () => {
 
 const table = document.getElementById("employeeTable");
 
-for (let i = 0; i < employees.length; i++) {
-  const e = employees[i];
+if (table) {
+  for (let i = 0; i < employees.length; i++) {
+    const e = employees[i];
 
-  const row = document.createElement("tr");
+    const row = document.createElement("tr");
 
+    const nameTd = document.createElement("td");
+    nameTd.textContent = e.name;
 
-  const nameTd = document.createElement("td");
-  nameTd.textContent = e.name;
+    const surnameTd = document.createElement("td");
+    surnameTd.textContent = e.surname;
 
-  const surnameTd = document.createElement("td");
-  surnameTd.textContent = e.surname;
+    const idTd = document.createElement("td");
+    idTd.textContent = e.id;
 
-  const idTd = document.createElement("td");
-  idTd.textContent = e.id;
+    const teamTd = document.createElement("td");
+    teamTd.textContent = e.team;
 
-  const teamTd = document.createElement("td");
-  teamTd.textContent = e.team;
+    const statusTd = document.createElement("td");
+    statusTd.textContent = e.status;
 
-  const statusTd = document.createElement("td");
-  statusTd.textContent = e.status;
+    if (e.status === "Свободен") {
+      statusTd.classList.add("status-free");
+    } else if (e.status === "На смяна") {
+      statusTd.classList.add("status-duty");
+    } else if (e.status === "В почивка") {
+      statusTd.classList.add("status-break");
+    } else if (e.status === "В проишествие") {
+      statusTd.classList.add("status-incident");
+    }
 
+    row.appendChild(nameTd);
+    row.appendChild(surnameTd);
+    row.appendChild(idTd);
+    row.appendChild(teamTd);
+    row.appendChild(statusTd);
 
-  if (e.status === "Свободен") {
-    statusTd.classList.add("status-free");
-  } else if (e.status === "На смяна") {
-    statusTd.classList.add("status-duty");
-  } else if (e.status === "В почивка") {
-    statusTd.classList.add("status-break");
-  } else if (e.status === "В проишествие") {
-    statusTd.classList.add("status-incident");
+    table.appendChild(row);
   }
-
- 
-  row.appendChild(nameTd);
-  row.appendChild(surnameTd);
-  row.appendChild(idTd);
-  row.appendChild(teamTd);
-  row.appendChild(statusTd);
-
-  
-  table.appendChild(row);
 }
 
-
- 
 
 
   if(document.getElementById("map")){
@@ -92,6 +88,8 @@ for (let i = 0; i < employees.length; i++) {
     }
   }
 });
+
+
 function getRandomItem(arr) {
   return arr[Math.floor(Math.random() * arr.length)];
 }
