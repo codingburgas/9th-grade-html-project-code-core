@@ -284,3 +284,65 @@ font-size: 15px;
 
 
 }
+#vehicleTable {
+  margin: 40px auto;
+  width: 80%;
+  text-align: center;
+  border-collapse: collapse;
+}
+
+#vehicleTable th,
+#vehicleTable td {
+  padding: 10px;
+  border: 1px solid #ccc;
+}
+.table-title {
+  text-align: center;
+  margin-top: 40px;
+  margin-bottom: 10px;
+  font-size: 24px;
+  font-weight: bold;
+}
+
+#vehicleTable {
+  margin: 0 auto;
+  width: 80%;
+  border-collapse: collapse;
+  text-align: center;
+}
+
+#vehicleTable th,
+#vehicleTable td {
+  padding: 10px;
+  border: 1px solid #ccc;
+}
+#vehicleContainer {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+  padding: 20px;
+}
+
+.vehicle-table {
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  padding: 10px;
+  width: 300px;
+  text-align: center;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.vehicle-table td {
+  padding: 8px;
+  border-bottom: 1px solid #eee;
+}
+
+.vehicle-table td:last-child {
+  border-bottom: none;
+}
+
+.vehicle-table .label {
+  font-weight: bold;
+  color: #333;
+}

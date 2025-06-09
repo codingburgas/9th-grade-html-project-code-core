@@ -28,17 +28,101 @@
   </header>
 
   <main>
-<h2>Списък с автомобили</h2>
-<table id="vehicleTable">
-  <thead>
-    <tr>
-      <th>№</th>
-      <th>Марка и модел</th>
-      <th>Регистрационен номер</th>
-      <th>Тип</th>
-      <th>Статус</th>
-    </tr>
-  </thead>
+<!DOCTYPE html>
+<html lang="bg">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Списък с автомобили</title>
+  <style>
+    /* Центриране и оформление на контейнера */
+    #vehicleContainer {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 20px;
+      padding: 20px;
+    }
+
+    /* Стил на всяка отделна таблица */
+    .vehicle-table {
+      border: 1px solid #ccc;
+      border-radius: 8px;
+      padding: 10px;
+      width: 300px;
+      text-align: center;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+      background: #fafafa;
+    }
+
+    /* Стил на клетките в таблицата */
+    .vehicle-table td {
+      padding: 8px;
+      border-bottom: 1px solid #eee;
+    }
+
+    /* Последния ред без долна граница */
+    .vehicle-table td:last-child {
+      border-bottom: none;
+    }
+
+    /* Стил за заглавните клетки (леви) */
+    .vehicle-table .label {
+      font-weight: bold;
+      color: #333;
+      width: 120px;
+      text-align: left;
+    }
+  </style>
+</head>
+<body>
+
+  <h1 style="text-align:center;">Списък с автомобили</h1>
+
+  <!-- Контейнер за таблиците с автомобили -->
+  <div id="vehicleContainer"></div>
+
+  <!-- Скриптът се вкарва най-долу преди затварящия body -->
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      const vehicles = [
+        { number: 1, model: "MAN TGM 13.290", registration: "CB1234AB", status: "Свободен" },
+        { number: 2, model: "Mercedes Atego", registration: "PB5678CD", status: "На мисия" },
+        { number: 3, model: "Volvo FL", registration: "B9101EF", status: "В ремонт" },
+        { number: 4, model: "Scania P280", registration: "E2345GH", status: "Свободен" },
+        { number: 5, model: "MAN TGM 13.290", registration: "TX6789IJ", status: "На мисия" },
+        { number: 6, model: "Mercedes Atego", registration: "KH3456KL", status: "В ремонт" },
+        { number: 7, model: "Volvo FL", registration: "PP7890MN", status: "Свободен" },
+        { number: 8, model: "Scania P280", registration: "M1234OP", status: "На мисия" },
+        { number: 9, model: "MAN TGM 13.290", registration: "Y5678QR", status: "В ремонт" },
+        { number: 10, model: "Mercedes Atego", registration: "CH9012ST", status: "Свободен" },
+        { number: 11, model: "Volvo FL", registration: "PK3456UV", status: "На мисия" },
+        { number: 12, model: "Scania P280", registration: "T7890WX", status: "В ремонт" },
+        { number: 13, model: "MAN TGM 13.290", registration: "CC1234YZ", status: "Свободен" },
+        { number: 14, model: "Mercedes Atego", registration: "BH5678AA", status: "На мисия" },
+        { number: 15, model: "Volvo FL", registration: "CM9012BB", status: "В ремонт" }
+      ];
+
+      const container = document.getElementById("vehicleContainer");
+
+      vehicles.forEach(vehicle => {
+        const table = document.createElement("table");
+        table.className = "vehicle-table";
+
+        table.innerHTML = `
+          <tr><td class="label">#</td><td>${vehicle.number}</td></tr>
+          <tr><td class="label">Модел</td><td>${vehicle.model}</td></tr>
+          <tr><td class="label">Рег. номер</td><td>${vehicle.registration}</td></tr>
+          <tr><td class="label">Статус</td><td style="color: ${vehicle.status === 'Свободен' ? 'green' : vehicle.status === 'На мисия' ? 'red' : 'orange'}">${vehicle.status}</td></tr>
+        `;
+
+        container.appendChild(table);
+      });
+    });
+  </script>
+</body>
+</html>
+
   <tbody>
  
   </tbody>
