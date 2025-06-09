@@ -6,13 +6,14 @@ window.addEventListener("load", function () {
   });
 });
 
-document.addEventListener("DOMContentLoaded", () => {
-  const themeToggle = document.getElementById("themeToggle");
-  if (themeToggle) {
-    themeToggle.addEventListener("click", () => {
-      document.body.classList.toggle("dark-theme");
-    });
-  }
+const LDModeToggle = document.getElementById("themeToggle");
+
+LDModeToggle.addEventListener('click', function(){
+
+  document.body.classList.toggle('dark')
+  
+});
+
 
   // Служители
   const employees = [
@@ -139,4 +140,4 @@ document.addEventListener("DOMContentLoaded", () => {
       container.appendChild(table);
     });
   }
-});
+
