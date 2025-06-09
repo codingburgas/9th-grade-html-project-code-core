@@ -267,3 +267,20 @@ width: 150px;
   }
 
 }
+
+
+
+
+#NavBarMenuOption:hover,
+#NavBarEmployeesOption:hover,
+#NavBarVehicleOption:hover,
+#NavBarEventsOption:hover,
+#NavBarAIOption:hover{
+
+background-color: #880000;
+padding:10px 10px;
+font-size: 15px;
+
+
+
+}
