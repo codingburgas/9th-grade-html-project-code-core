@@ -63,6 +63,7 @@ color: rgb(255, 255, 255);
 
 
 
+
 #ImageBackgroundAndReaction {
   position: relative;
   display: inline-block; 
@@ -346,3 +347,4 @@ font-size: 15px;
   font-weight: bold;
   color: #333;
 }
+
