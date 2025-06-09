@@ -1,3 +1,22 @@
+window.addEventListener("load", function(){
+
+  const loader = document.querySelector(".loader");
+
+  loader.classList.add("loader-hidden");
+
+  loader.addEventListener("transitionend", function(){
+
+    document.body.removeChild(loader)
+
+  })
+
+})
+
+
+
+
+
+
 document.addEventListener("DOMContentLoaded", () => {
 
   const themeToggle = document.getElementById("themeToggle");
