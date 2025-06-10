@@ -348,3 +348,49 @@ font-size: 15px;
   color: #333;
 }
 
+
+
+#EmployeeCard3,
+#EmployeeCard2,
+#EmployeeCard1 {
+  display: flex;
+ 
+  height: 300px;
+  width: 450px;
+  margin: 40px auto;
+  padding: 20px;
+  background: white;
+  border-radius: 10px;
+  box-shadow: 0 20px 30px rgba(0, 0, 0, 0.1);
+  outline: 5px solid rgb(216, 216, 216);
+  box-sizing: border-box;
+ 
+}
+
+
+ #EmployeeCard3Picture,
+ #EmployeeCard2Picture,
+#EmployeeCard1Picture {
+  border: 2px solid rgb(216, 216, 216);
+  box-shadow: 0 20px 30px rgba(0, 0, 0, 0.1);
+  outline: 5px solid rgb(216, 216, 216);
+  flex-shrink: 0;
+}
+
+#EmployeeCard3Text,
+#EmployeeCard2Text,
+#EmployeeCard1Text {
+  padding: 0 0 0 30px;
+  color:#121212;
+}
+
+#EmployeeCardhold{
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+#Employofmonth{
+  font-size: 50px;
+  font-family: Georgia, 'Times New Roman', Times, serif;
+}
