@@ -15,7 +15,6 @@ LDModeToggle.addEventListener('click', function(){
 });
 
 
-  // Служители
   const employees = [
     { name: "Ivan", surname: "Petrov", id: 1, team: "A", status: "В проишествие", phone: "0888123456" },
     { name: "Maria", surname: "Ivanova", id: 2, team: "B", status: "В проишествие", phone: "0899123456" },
@@ -74,7 +73,7 @@ LDModeToggle.addEventListener('click', function(){
     }
   }
 
-  // Карта
+
   if (document.getElementById("map")) {
     const map = L.map("map").setView([42.6975, 23.3242], 7);
     L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
@@ -91,53 +90,44 @@ LDModeToggle.addEventListener('click', function(){
     }
   }
 
-  // Автомобили
+  
   function getRandomItem(arr) {
     return arr[Math.floor(Math.random() * arr.length)];
   }
-
-  const fixedVehicles = [
-    { number: 1, model: "MAN TGM 13.290", registration: "CB1234AB" },
-    { number: 2, model: "Mercedes Atego", registration: "PB5678CD" },
-    { number: 3, model: "Volvo FL", registration: "B9101EF" },
-    { number: 4, model: "Scania P280", registration: "E2345GH" },
-    { number: 5, model: "MAN TGM 13.290", registration: "TX6789IJ" },
-    { number: 6, model: "Mercedes Atego", registration: "KH3456KL" },
-    { number: 7, model: "Volvo FL", registration: "PP7890MN" },
-    { number: 8, model: "Scania P280", registration: "M1234OP" },
-    { number: 9, model: "MAN TGM 13.290", registration: "Y5678QR" },
-    { number: 10, model: "Mercedes Atego", registration: "CH9012ST" },
-    { number: 11, model: "Volvo FL", registration: "PK3456UV" },
-    { number: 12, model: "Scania P280", registration: "T7890WX" },
-    { number: 13, model: "MAN TGM 13.290", registration: "CC1234YZ" },
-    { number: 14, model: "Mercedes Atego", registration: "BH5678AA" },
-    { number: 15, model: "Volvo FL", registration: "CM9012BB" }
+  document.addEventListener("DOMContentLoaded", () => {
+  const vehicles = [
+    { number: 11, model: "MAN TGM 13.290", registration: "CB1234AB", status: "Свободен" },
+    { number: 2, model: "Mercedes Atego", registration: "PB5678CD", status: "На мисия" },
+    { number: 13, model: "Volvo FL", registration: "B9101EF", status: "В ремонт" },
+    { number: 4, model: "Scania P280", registration: "E2345GH", status: "Свободен" },
+    { number: 55, model: "MAN TGM 13.290", registration: "TX6789IJ", status: "На мисия" },
+    { number: 68, model: "Mercedes Atego", registration: "KH3456KL", status: "В ремонт" },
+    { number: 711, model: "Volvo FL", registration: "PP7890MN", status: "Свободен" },
+    { number: 812, model: "Scania P280", registration: "M1234OP", status: "На мисия" },
+    { number: 94, model: "MAN TGM 13.290", registration: "Y5678QR", status: "В ремонт" },
+    { number: 101, model: "Mercedes Atego", registration: "CH9012ST", status: "Свободен" },
+    { number: 1, model: "Volvo FL", registration: "PK3456UV", status: "На мисия" },
+    { number: 9, model: "Scania P280", registration: "T7890WX", status: "В ремонт" },
+    { number: 213, model: "MAN TGM 13.290", registration: "CC1234YZ", status: "Свободен" },
+    { number: 14, model: "Mercedes Atego", registration: "BH5678AA", status: "На мисия" },
+    { number: 6, model: "Volvo FL", registration: "CM9012BB", status: "В ремонт" }
   ];
 
-  const types = ["Пожарна", "Линейка", "Команден", "Техника"];
-  const statuses = ["Свободен", "На мисия", "В ремонт"];
-
-  const vehicles = fixedVehicles.map(v => ({
-    ...v,
-    type: getRandomItem(types),
-    status: getRandomItem(statuses)
-  }));
-
   const container = document.getElementById("vehicleContainer");
-  if (container) {
-    vehicles.forEach(vehicle => {
-      const table = document.createElement("table");
-      table.className = "vehicle-table";
 
-      table.innerHTML = `
-        <tr><td class="label">#</td><td>${vehicle.number}</td></tr>
-        <tr><td class="label">Модел</td><td>${vehicle.model}</td></tr>
-        <tr><td class="label">Рег. номер</td><td>${vehicle.registration}</td></tr>
-        <tr><td class="label">Тип</td><td>${vehicle.type}</td></tr>
-        <tr><td class="label">Статус</td><td style="color: ${vehicle.status === 'Свободен' ? 'green' : vehicle.status === 'На мисия' ? 'red' : 'orange'}">${vehicle.status}</td></tr>
-      `;
+  vehicles.forEach(vehicle => {
+    const table = document.createElement("table");
+    table.className = "vehicle-table";
 
-      container.appendChild(table);
-    });
-  }
+    table.innerHTML = `
+      <tr><td class="label">Автомобил</td><td>${vehicle.number}</td></tr>
+      <tr><td class="label">Модел</td><td>${vehicle.model}</td></tr>
+      <tr><td class="label">Рег. номер</td><td>${vehicle.registration}</td></tr>
+      <tr><td class="label">Статус</td><td style="color: ${vehicle.status === 'Свободен' ? 'green' : vehicle.status === 'На мисия' ? 'red' : 'orange'}">${vehicle.status}</td></tr>
+    `;
+
+    container.appendChild(table);
+  });
+});
+
 
