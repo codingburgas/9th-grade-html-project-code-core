@@ -53,15 +53,16 @@ LDModeToggle.addEventListener('click', function(){
       const statusTd = document.createElement("td");
       statusTd.textContent = e.status;
 
-      if (e.status === "Свободен") {
-        statusTd.classList.add("status-free");
-      } else if (e.status === "На смяна") {
-        statusTd.classList.add("status-duty");
-      } else if (e.status === "В почивка") {
-        statusTd.classList.add("status-break");
-      } else if (e.status === "В проишествие") {
-        statusTd.classList.add("status-incident");
-      }
+if (e.status === "Свободен") {
+  statusTd.classList.add("status-free");
+} else if (e.status === "На смяна") {
+  statusTd.classList.add("status-duty");
+} else if (e.status === "В почивка") {
+  statusTd.classList.add("status-break");
+} else if (e.status === "В проишествие") {
+  statusTd.classList.add("status-incident");
+}
+
 
       row.appendChild(nameTd);
       row.appendChild(surnameTd);

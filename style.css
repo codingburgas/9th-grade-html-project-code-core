@@ -394,3 +394,22 @@ font-size: 15px;
   font-size: 50px;
   font-family: Georgia, 'Times New Roman', Times, serif;
 }
+.status-free {
+  color: green;
+  font-weight: bold;
+}
+
+.status-duty {
+  color: blue;
+  font-weight: bold;
+}
+
+.status-break {
+  color: orange;
+  font-weight: bold;
+}
+
+.status-incident {
+  color: red;
+  font-weight: bold;
+}
