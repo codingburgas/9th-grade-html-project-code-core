@@ -94,40 +94,39 @@ LDModeToggle.addEventListener('click', function(){
   function getRandomItem(arr) {
     return arr[Math.floor(Math.random() * arr.length)];
   }
-  document.addEventListener("DOMContentLoaded", () => {
+
   const vehicles = [
-    { number: 11, model: "MAN TGM 13.290", registration: "CB1234AB", status: "Свободен" },
-    { number: 2, model: "Mercedes Atego", registration: "PB5678CD", status: "На мисия" },
-    { number: 13, model: "Volvo FL", registration: "B9101EF", status: "В ремонт" },
-    { number: 4, model: "Scania P280", registration: "E2345GH", status: "Свободен" },
-    { number: 55, model: "MAN TGM 13.290", registration: "TX6789IJ", status: "На мисия" },
-    { number: 68, model: "Mercedes Atego", registration: "KH3456KL", status: "В ремонт" },
-    { number: 711, model: "Volvo FL", registration: "PP7890MN", status: "Свободен" },
-    { number: 812, model: "Scania P280", registration: "M1234OP", status: "На мисия" },
-    { number: 94, model: "MAN TGM 13.290", registration: "Y5678QR", status: "В ремонт" },
-    { number: 101, model: "Mercedes Atego", registration: "CH9012ST", status: "Свободен" },
-    { number: 1, model: "Volvo FL", registration: "PK3456UV", status: "На мисия" },
-    { number: 9, model: "Scania P280", registration: "T7890WX", status: "В ремонт" },
-    { number: 213, model: "MAN TGM 13.290", registration: "CC1234YZ", status: "Свободен" },
-    { number: 14, model: "Mercedes Atego", registration: "BH5678AA", status: "На мисия" },
-    { number: 6, model: "Volvo FL", registration: "CM9012BB", status: "В ремонт" }
+    { number: 11, model: "MAN TGM 13.290", driver: "Ivan Petrov", registration: "CB1234AB", status: "Свободен" },
+    { number: 2, model: "Mercedes Atego", driver: "Maria Ivanova", registration: "PB5678CD", status: "На мисия" },
+    { number: 13, model: "Volvo FL", driver: "Georgi Dimitrov", registration: "B9101EF", status: "В ремонт" },
+    { number: 4, model: "Scania P280", driver: "Elena Stoyanova", registration: "E2345GH", status: "Свободен" },
+    { number: 55, model: "MAN TGM 13.290", driver: "Nikolay Kolev", registration: "TX6789IJ", status: "На мисия" },
+    { number: 68, model: "Mercedes Atego", driver: "Desislava Todorova", registration: "KH3456KL", status: "В ремонт" },
+    { number: 711, model: "Volvo FL", driver: "Petar Georgiev", registration: "PP7890MN", status: "Свободен" },
+    { number: 812, model: "Scania P280", driver: "Yana Mihaylova", registration: "M1234OP", status: "На мисия" },
+    { number: 94, model: "MAN TGM 13.290", driver: "Ivo Angelov", registration: "Y5678QR", status: "В ремонт" },
+    { number: 101, model: "Mercedes Atego", driver: "Diana Petrova", registration: "CH9012ST", status: "Свободен" },
+    { number: 1, model: "Volvo FL", driver: "Kristian Todorov", registration: "PK3456UV", status: "На мисия" },
+    { number: 9, model: "Scania P280", driver: "Tanya Velikova", registration: "T7890WX", status: "В ремонт" },
+    { number: 213, model: "MAN TGM 13.290", driver: "Vladimir Stanev", registration: "CC1234YZ", status: "Свободен" },
+    { number: 14, model: "Mercedes Atego", driver: "Mila Marinova", registration: "BH5678AA", status: "На мисия" },
+    { number: 6, model: "Volvo FL", driver: "Rumen Ivanov", registration: "CM9012BB", status: "В ремонт" }
   ];
+
 
   const container = document.getElementById("vehicleContainer");
 
   vehicles.forEach(vehicle => {
-    const table = document.createElement("table");
-    table.className = "vehicle-table";
+  const table = document.createElement("table");
+  table.className = "vehicle-table";
 
-    table.innerHTML = `
-      <tr><td class="label">Автомобил</td><td>${vehicle.number}</td></tr>
-      <tr><td class="label">Модел</td><td>${vehicle.model}</td></tr>
-      <tr><td class="label">Рег. номер</td><td>${vehicle.registration}</td></tr>
-      <tr><td class="label">Статус</td><td style="color: ${vehicle.status === 'Свободен' ? 'green' : vehicle.status === 'На мисия' ? 'red' : 'orange'}">${vehicle.status}</td></tr>
-    `;
+  table.innerHTML = `
+    <tr><td class="label">#</td><td>${vehicle.number}</td></tr>
+    <tr><td class="label">Модел</td><td>${vehicle.model}</td></tr>
+    <tr><td class="label">Рег. номер</td><td>${vehicle.registration}</td></tr>
+    <tr><td class="label">Статус</td><td style="color: ${vehicle.status === 'Свободен' ? 'green' : vehicle.status === 'На мисия' ? 'red' : 'orange'}">${vehicle.status}</td></tr>
+    <tr><td class="label">Шофьор</td><td>${vehicle.driver}</td></tr>
+  `;
 
-    container.appendChild(table);
-  });
+  container.appendChild(table);
 });
-
-
